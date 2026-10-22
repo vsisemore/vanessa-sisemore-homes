@@ -11,7 +11,7 @@ Static website for Vanessa Sisemore, real estate in Nashville and Middle Tenness
 | `public/team/index.html` | Vanessa & Pam |
 | `public/investing/index.html` | Investing |
 | `public/thanks.html` | Thank-you page, used only when a visitor's browser has JavaScript turned off |
-| `public/assets/` | Images, favicon, and `forms.js` for the contact forms |
+| `public/assets/` | Images, favicon, `forms.js` for the contact forms, and `menu.js`, which closes the phone and tablet menu after a tap |
 | `public/_headers` | Security headers |
 | `netlify.toml` | Netlify settings (publish folder: `public`, no build step) |
 

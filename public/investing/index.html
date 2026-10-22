@@ -30,6 +30,27 @@ img { max-width: 100%; }
 .hp-field { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 button[disabled] { opacity: 0.7; cursor: wait; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
+
+/* Header fit (added Oct 22, 2026). Live testing found the header wider than the screen on phones (menu
+   button off-screen), on small tablets (621-760px) and on small laptops (981-1100px). */
+@media (max-width:1180px){.navlinks{display:none !important}.navmenu{display:block !important}}
+@media (max-width:800px){.navphone{display:none !important}}
+.menu-cta,.menu-call{display:none !important}
+@media (max-width:800px){.menu-call{display:block !important}}
+@media (max-width:620px){
+  .navcta{display:none !important}
+  .menu-cta{display:block !important}
+  .brand-link{gap:10px !important}
+  .brand-mark{width:50px !important;height:36px !important}
+  .brand-text{gap:5px !important}
+  .brand-name{font-size:16px !important;letter-spacing:0.14em !important}
+  .brand-tag{font-size:8.5px !important;letter-spacing:0.26em !important}
+}
+@media (max-width:359px){
+  .brand-mark{width:42px !important;height:30px !important}
+  .brand-name{font-size:14px !important;letter-spacing:0.1em !important}
+  .brand-tag{letter-spacing:0.18em !important}
+}
 </style>
 </head>
 <body>
@@ -37,8 +58,8 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 
 <header style="position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(251,248,244,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #EDE3D9">
 <div style="max-width: 1240px; margin: 0 auto; padding: 16px clamp(20px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-left: max(clamp(20px, 4vw, 48px), env(safe-area-inset-left, 0px)); padding-right: max(clamp(20px, 4vw, 48px), env(safe-area-inset-right, 0px))">
-<a href="/" aria-label="Vanessa Sisemore Homes, home" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1D2B45; line-height: 1">
-<svg viewBox="114 134 204 146" aria-hidden="true" style="width: 64.3px; height: 46px; display: block; flex: none">
+<a href="/" aria-label="Vanessa Sisemore Homes, home" class="brand-link" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1D2B45; line-height: 1">
+<svg class="brand-mark" viewBox="114 134 204 146" aria-hidden="true" style="width: 64.3px; height: 46px; display: block; flex: none">
 <path d="M206 182.5 L258 141 L310 183.5" style="fill: none; stroke: #1D2B45; stroke-width: 2.6; stroke-linejoin: miter"></path>
 <path d="M283 161.5 V146 H291 V168" style="fill: none; stroke: #1D2B45; stroke-width: 2.6; stroke-linejoin: miter"></path>
 <path d="M299 174.6 V272 H226" style="fill: none; stroke: #1D2B45; stroke-width: 2.6; stroke-linejoin: miter"></path>
@@ -49,9 +70,9 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 <text x="168" y="258" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 132px; fill: #1D2B45; text-anchor: middle">V</text>
 <text x="212" y="272" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 106px; fill: #B5714F; text-anchor: middle">S</text>
 </svg>
-<span style="display: flex; flex-direction: column; gap: 7px">
-<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 21.0px; letter-spacing: 0.18em; white-space: nowrap">VANESSA SISEMORE</span>
-<span style="display: flex; align-items: center; gap: 7px; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 9.5px; letter-spacing: 0.32em; color: #93553A; white-space: nowrap">HOMES<span aria-hidden="true" style="width: 14px; height: 1px; background: #B5714F"></span>TN<svg viewBox="0 0 12 11" aria-hidden="true" style="width: 9px; height: 8.2px; display: block; flex: none"><path d="M6 10.5 C2 7.5 0.5 5.5 0.8 3.4 C1.1 1.6 2.6 0.6 4 0.8 C5 0.9 5.6 1.6 6 2.4 C6.4 1.6 7 0.9 8 0.8 C9.4 0.6 10.9 1.6 11.2 3.4 C11.5 5.5 10 7.5 6 10.5 Z" style="fill: #B5714F"></path></svg>CA</span>
+<span class="brand-text" style="display: flex; flex-direction: column; gap: 7px">
+<span class="brand-name" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 21.0px; letter-spacing: 0.18em; white-space: nowrap">VANESSA SISEMORE</span>
+<span class="brand-tag" style="display: flex; align-items: center; gap: 7px; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 9.5px; letter-spacing: 0.32em; color: #93553A; white-space: nowrap">HOMES<span aria-hidden="true" style="width: 14px; height: 1px; background: #B5714F"></span>TN<svg viewBox="0 0 12 11" aria-hidden="true" style="width: 9px; height: 8.2px; display: block; flex: none"><path d="M6 10.5 C2 7.5 0.5 5.5 0.8 3.4 C1.1 1.6 2.6 0.6 4 0.8 C5 0.9 5.6 1.6 6 2.4 C6.4 1.6 7 0.9 8 0.8 C9.4 0.6 10.9 1.6 11.2 3.4 C11.5 5.5 10 7.5 6 10.5 Z" style="fill: #B5714F"></path></svg>CA</span>
 </span>
 </a>
 <nav aria-label="Main" class="navlinks" style="align-items: center; gap: 30px; font-size: 12.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase">
@@ -59,11 +80,11 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 <a href="/about/" style="text-decoration: none; color: #1D2B45; padding-bottom: 4px">About</a>
 <a href="/team/" style="text-decoration: none; color: #1D2B45; padding-bottom: 4px">Vanessa &amp; Pam</a>
 <a href="#top" aria-current="page" style="text-decoration: none; color: #1D2B45; padding-bottom: 4px; border-bottom: 1px solid var(--accent)">Investing</a>
-<a href="/" style="text-decoration: none; color: #1D2B45; padding-bottom: 4px">FAQ</a>
+<a href="/#faq" style="text-decoration: none; color: #1D2B45; padding-bottom: 4px">FAQ</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 18px">
 <a href="tel:+16154319823" class="navphone" style="text-decoration: none; color: #1D2B45; font-weight: 500; font-size: 15px; white-space: nowrap">615-431-9823</a>
-<a href="#contact" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; background: #1D2B45; color: #FFFFFF; text-decoration: none; font-size: 12.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; border-radius: 2px; white-space: nowrap">Let’s talk</a>
+<a href="#contact" class="navcta" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; background: #1D2B45; color: #FFFFFF; text-decoration: none; font-size: 12.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; border-radius: 2px; white-space: nowrap">Let’s talk</a>
 <details class="navmenu" style="position: relative">
 <summary aria-label="Open menu" style="display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; border: 1px solid #D9CBBE; border-radius: 2px; color: #1D2B45">
 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
@@ -73,7 +94,9 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 <a href="/about/" style="padding: 12px 22px; text-decoration: none; color: #1D2B45; font-size: 16px">About</a>
 <a href="/team/" style="padding: 12px 22px; text-decoration: none; color: #1D2B45; font-size: 16px">Vanessa &amp; Pam</a>
 <a href="#top" style="padding: 12px 22px; text-decoration: none; color: #1D2B45; font-size: 16px">Investing</a>
-<a href="/" style="padding: 12px 22px; text-decoration: none; color: #1D2B45; font-size: 16px">FAQ</a>
+<a href="/#faq" style="padding: 12px 22px; text-decoration: none; color: #1D2B45; font-size: 16px">FAQ</a>
+<a href="#contact" class="menu-cta" style="margin-top: 6px; border-top: 1px solid #EDE3D9; padding: 14px 22px 12px; text-decoration: none; color: #1D2B45; font-size: 16px; font-weight: 600">Let’s talk</a>
+<a href="tel:+16154319823" class="menu-call" style="padding: 12px 22px; text-decoration: none; color: #1D2B45; font-size: 16px">Call 615-431-9823</a>
 </nav>
 </details>
 </div>
@@ -279,16 +302,16 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 </div>
 <nav aria-label="Services" style="flex: 0 1 220px; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
 <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #D9A487; margin-bottom: 4px">How I help</div>
-<a href="/" style="color: #E3E8F0; text-decoration: none">Moving to Tennessee</a>
-<a href="/" style="color: #E3E8F0; text-decoration: none">Sell your home</a>
-<a href="/" style="color: #E3E8F0; text-decoration: none">Buy in Middle Tennessee</a>
+<a href="/#help" style="color: #E3E8F0; text-decoration: none">Moving to Tennessee</a>
+<a href="/#help" style="color: #E3E8F0; text-decoration: none">Sell your home</a>
+<a href="/#help" style="color: #E3E8F0; text-decoration: none">Buy in Middle Tennessee</a>
 <a href="#top" style="color: #E3E8F0; text-decoration: none">Real estate investing</a>
 </nav>
 <nav aria-label="Explore" style="flex: 0 1 220px; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
 <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #D9A487; margin-bottom: 4px">Explore</div>
 <a href="/about/" style="color: #E3E8F0; text-decoration: none">About Vanessa</a>
 <a href="/team/" style="color: #E3E8F0; text-decoration: none">Vanessa &amp; Pam</a>
-<a href="/" style="color: #E3E8F0; text-decoration: none">Questions &amp; answers</a>
+<a href="/#faq" style="color: #E3E8F0; text-decoration: none">Questions &amp; answers</a>
 <a href="#contact" style="color: #E3E8F0; text-decoration: none">Schedule a call</a>
 </nav>
 <div style="flex: 0 1 240px; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
@@ -296,7 +319,7 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 <a href="tel:+16154319823" style="color: #E3E8F0; text-decoration: none">615-431-9823</a>
 <a href="mailto:vanessa.sisemore@compass.com" style="color: #E3E8F0; text-decoration: none">vanessa.sisemore@compass.com</a>
 <span>Serving Nashville &amp; Middle Tennessee</span>
-<a href="#contact" style="color: #E3E8F0; text-decoration: none">Instagram · @vanessasells_tn_ca</a>
+<!-- Instagram: add a link to the real profile here once Vanessa confirms the handle. -->
 </div>
 </div>
 <div style="border-top: 1px solid #2E3D5A; padding-top: 26px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.6; color: #A9B3C6">
@@ -308,6 +331,7 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 </footer>
 
 </div>
+<script src="/assets/menu.js" defer></script>
 <script src="/assets/forms.js" defer></script>
 </body>
 </html>

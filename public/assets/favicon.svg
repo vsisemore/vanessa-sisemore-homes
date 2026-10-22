@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+<circle cx="200" cy="200" r="194" fill="#18243B"/>
+<circle cx="200" cy="200" r="178" fill="none" stroke="#D9A487" stroke-width="3"/>
+<g transform="translate(200 206) scale(1.38) translate(-214 -207)">
+<path d="M206 182.5 L258 141 L310 183.5" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linejoin="miter"/>
+<path d="M283 161.5 V146 H291 V168" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linejoin="miter"/>
+<path d="M299 174.6 V272 H226" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linejoin="miter"/>
+<rect x="264" y="160" width="5" height="5" fill="#D9A487"/>
+<rect x="270" y="160" width="5" height="5" fill="#D9A487"/>
+<rect x="264" y="166" width="5" height="5" fill="#D9A487"/>
+<rect x="270" y="166" width="5" height="5" fill="#D9A487"/>
+<text x="168" y="258" font-family="Georgia, 'Times New Roman', serif" font-weight="600" font-size="132" fill="#FFFFFF" text-anchor="middle">V</text>
+<text x="212" y="272" font-family="Georgia, 'Times New Roman', serif" font-weight="600" font-size="106" fill="#D9A487" text-anchor="middle">S</text>
+</g>
+</svg>

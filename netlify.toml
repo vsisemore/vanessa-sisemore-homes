@@ -1,0 +1,6 @@
+# Netlify configuration for Vanessa Sisemore's main website (base site).
+# Static pages in public/. No build step. Target: vsre.netlify.app until the custom domain is connected.
+# Security headers live in public/_headers so they apply to every kind of deploy, including drag-and-drop.
+
+[build]
+  publish = "public"

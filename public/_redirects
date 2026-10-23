@@ -1,0 +1,2 @@
+# The old test address now sends visitors (and search engines) to the real domain.
+https://vsre.netlify.app/* https://vanessasisemore.com/:splat 301!

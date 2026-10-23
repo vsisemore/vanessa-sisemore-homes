@@ -56,6 +56,21 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 /* Launch (Oct 22, 2026): unfinished placeholders are hidden. Delete the class to show one again. */
 .launch-hidden{display:none !important}
 .launch-solo{max-width:780px}
+/* Footer logo on phones (Oct 22, 2026): the wordmark was ~11px wider than a 390px screen and got clipped. */
+@media (max-width:620px){
+  .fbrand-mark{width:56px !important;height:40px !important}
+  .fbrand-name{font-size:18px !important;letter-spacing:0.13em !important}
+  .fbrand-tag{font-size:9px !important;letter-spacing:0.26em !important}
+}
+@media (max-width:359px){
+  .fbrand-mark{width:46px !important;height:33px !important}
+  .fbrand-name{font-size:15px !important;letter-spacing:0.1em !important}
+  .fbrand-tag{letter-spacing:0.18em !important}
+}
+/* Phone layout (Oct 22, 2026): let columns and form fields shrink to the screen instead of their default width. */
+[style*="flex: 1"]{min-width:0}
+form.nf-form input:not([type=hidden]), form.nf-form select, form.nf-form textarea{min-width:0;width:100%}
+@media (max-width:480px){[style*="grid-template-columns: repeat(auto-fit"]{grid-template-columns:1fr !important}}
 </style>
 </head>
 <body>
@@ -455,7 +470,7 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 44px">
 <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
 <a href="#top" aria-label="Vanessa Sisemore Homes, back to top" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #FFFFFF; line-height: 1">
-<svg viewBox="114 134 204 146" aria-hidden="true" style="width: 74.1px; height: 53px; display: block; flex: none">
+<svg class="fbrand-mark" viewBox="114 134 204 146" aria-hidden="true" style="width: 74.1px; height: 53px; display: block; flex: none">
 <path d="M206 182.5 L258 141 L310 183.5" style="fill: none; stroke: #FFFFFF; stroke-width: 2.6; stroke-linejoin: miter"></path>
 <path d="M283 161.5 V146 H291 V168" style="fill: none; stroke: #FFFFFF; stroke-width: 2.6; stroke-linejoin: miter"></path>
 <path d="M299 174.6 V272 H226" style="fill: none; stroke: #FFFFFF; stroke-width: 2.6; stroke-linejoin: miter"></path>
@@ -467,8 +482,8 @@ button[disabled] { opacity: 0.7; cursor: wait; }
 <text x="212" y="272" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 106px; fill: #D9A487; text-anchor: middle">S</text>
 </svg>
 <span style="display: flex; flex-direction: column; gap: 8px">
-<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 24.1px; letter-spacing: 0.18em; white-space: nowrap">VANESSA SISEMORE</span>
-<span style="display: flex; align-items: center; gap: 8px; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 10.9px; letter-spacing: 0.32em; color: #D9A487; white-space: nowrap">HOMES<span aria-hidden="true" style="width: 16px; height: 1px; background: #D9A487"></span>TN<svg viewBox="0 0 12 11" aria-hidden="true" style="width: 10px; height: 9.2px; display: block; flex: none"><path d="M6 10.5 C2 7.5 0.5 5.5 0.8 3.4 C1.1 1.6 2.6 0.6 4 0.8 C5 0.9 5.6 1.6 6 2.4 C6.4 1.6 7 0.9 8 0.8 C9.4 0.6 10.9 1.6 11.2 3.4 C11.5 5.5 10 7.5 6 10.5 Z" style="fill: #D9A487"></path></svg>CA</span>
+<span class="fbrand-name" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 24.1px; letter-spacing: 0.18em; white-space: nowrap">VANESSA SISEMORE</span>
+<span class="fbrand-tag" style="display: flex; align-items: center; gap: 8px; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 10.9px; letter-spacing: 0.32em; color: #D9A487; white-space: nowrap">HOMES<span aria-hidden="true" style="width: 16px; height: 1px; background: #D9A487"></span>TN<svg viewBox="0 0 12 11" aria-hidden="true" style="width: 10px; height: 9.2px; display: block; flex: none"><path d="M6 10.5 C2 7.5 0.5 5.5 0.8 3.4 C1.1 1.6 2.6 0.6 4 0.8 C5 0.9 5.6 1.6 6 2.4 C6.4 1.6 7 0.9 8 0.8 C9.4 0.6 10.9 1.6 11.2 3.4 C11.5 5.5 10 7.5 6 10.5 Z" style="fill: #D9A487"></path></svg>CA</span>
 </span>
 </a>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; max-width: 26em">Real estate, simple and steady — in Middle Tennessee and California.</p>
